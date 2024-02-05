@@ -113,11 +113,6 @@ const router = createRouter({
       name: 'surveyHealth',
       component: SurveyHealthView
     },
-    {
-      path: '/api/kakao-login',
-      name: 'kakoLogin',
-      component: MainCaffeineView,
-    }
   ],
 })
 
