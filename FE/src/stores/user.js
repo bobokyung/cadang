@@ -119,23 +119,6 @@ export const useUserStore = defineStore("user", () => {
       });
   };
 
-<<<<<<< HEAD
-  const logout = async () => {
-    try {
-      await axios({
-        url: `${import.meta.env.REST_USER_API}/logout`,
-        method: "POST",
-      });
-
-      // 로그아웃 미완성
-      router.push('/login');
-    } catch (err) {
-      console.error(err);
-    }
-  };
-=======
-
->>>>>>> 4d88866bd373271e416227eb722f89f37497472a
 
   const researchUser = function () {
     axios({
