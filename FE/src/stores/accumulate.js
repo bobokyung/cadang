@@ -1,109 +1,132 @@
 import { ref, computed } from "vue";
 import { defineStore } from "pinia";
+import { responseState } from "./util";
 import router from "@/router";
 import axios from "axios";
 
-export const useAccumulateStore = defineStore(
-  "accumulate",
-  () => {
-    // =========== STATE ===============
+export const useAccumulateStore = defineStore("accumulate", () => {
+  // =========== STATE ===============
 
-    const acuumulateList = ref([]);
-    const acuumulateMonth = ref([]);
+  const accumulateList = ref([]);
+  const accumulateMonth = ref([]);
+  const accumulateTemp = ref([]);
 
-    const acuumulateToday = ref({});
-    const acuumulateDay = ref({});
+  const accumulateToday = ref({});
+  const accumulateDay = ref({});
 
-    // =========== GETTER ===============
+  // =========== GETTER ===============
 
-    const getAcuumulateList = computed(() => {
-      return acuumulateList.value;
-    });
+  const getAccumulateList = computed(() => {
+    return accumulateList.value;
+  });
 
-    const getAcuumulateMonth = computed(() => {
-      return acuumulateMonth.value;
-    });
+  const getAccumulateMonth = computed(() => {
+    return accumulateMonth.value;
+  });
 
-    const getAcuumulateToday = computed(() => {
-      return acuumulateToday.value;
-    });
+  const getAccumulateToday = computed(() => {
+    return accumulateToday.value;
+  });
 
-    const getAcuumulateDay = computed(() => {
-      return acuumulateDay.value;
-    });
+  const getAccumulateDay = computed(() => {
+    return accumulateDay.value;
+  });
 
-    // =========== ACTION ===============
-    // params는 요청과 함께 전송되는 파라미터 (쿼리스트링)
-    // data는 요청 바디로 전송될 데이터 (JSON)
-    const today = function () {
-      axios({
-        url: `${import.meta.env.REST_USER_API}/today`,
-        method: "GET",
+  const getAccumulateTemp = computed(() => {
+    return accumulateTemp.value;
+  });
+
+  // =========== ACTION ===============
+  // params는 요청과 함께 전송되는 파라미터 (쿼리스트링)
+  // data는 요청 바디로 전송될 데이터 (JSON)
+  const today = function () {
+    axios({
+      url: `${import.meta.env.VITE_REST_ACCUMULATE_API}/today`,
+      method: "GET",
+    })
+      .then((res) => {
+        accumulateToday.value = res.data;
+        if(accumulateToday.value.accumulateCaffeine != undefined) {
+          accumulateToday.value.accumulateCaffeine = accumulateToday.value.accumulateCaffeine.toFixed(1);
+        }
+        if(accumulateToday.value.accumulateSugar != undefined) {
+          accumulateToday.value.accumulateSugar = accumulateToday.value.accumulateSugar.toFixed(1);
+        }
       })
-        .then((res) => {
-          acuumulateToday.value = res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
+      .catch((err) => {
+        
+      });
+  };
 
-    const duration = function () {
-      axios({
-        url: `${import.meta.env.REST_USER_API}/duration`,
-        method: "GET",
+  const duration = function () {
+    axios({
+      url: `${import.meta.env.VITE_REST_ACCUMULATE_API}/duration`,
+      method: "GET",
+    })
+      .then((res) => {
+        accumulateList.value = res.data;
       })
-        .then((res) => {
-          acuumulateList.value = res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
+      .catch((err) => {
+        
+      });
+  };
 
-    // date example ) 202401 (연도+월)
-    const month = function (date) {
-      axios({
-        url: `${import.meta.env.REST_USER_API}/month`,
-        method: "GET",
-        params: { ym: date },
+  // date example) 202401 (연도+월)
+  const month = async function (ym) {
+    await axios({
+      url: `${import.meta.env.VITE_REST_ACCUMULATE_API}/${ym.value}/month`,
+      method: "GET",
+    })
+      .then((res) => {
+        if (res.status == responseState.SUCCESS) {
+          
+          accumulateMonth.value = res.data;
+          if(accumulateMonth != undefined)
+            sessionStorage.setItem('calendarMonth', JSON.stringify(accumulateMonth.value));
+        }
       })
-        .then((res) => {
-          acuumulateMonth.value = res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
+      .catch((err) => {
+        
+      });
+  };
 
-    // date example ) 20240123 (연도+월일)
-    const day = function (date) {
-      axios({
-        url: `${import.meta.env.REST_USER_API}/day`,
-        method: "GET",
-        params: { date: date },
+  // date example) 20240123 (연도+월일)
+  const day = function (date) {
+    axios({
+      url: `${import.meta.env.VITE_REST_ACCUMULATE_API}/${date.value}/day`,
+      method: "GET",
+    })
+      .then((res) => {
+        if (res.status == responseState.SUCCESS) {
+          accumulateDay.value = res.data;
+
+          if(accumulateDay.value.accumulateCaffeine != undefined) {
+            accumulateDay.value.accumulateCaffeine = accumulateDay.value.accumulateCaffeine.toFixed(1);
+          }
+          if(accumulateDay.value.accumulateSugar != undefined) {
+            accumulateDay.value.accumulateSugar = accumulateDay.value.accumulateSugar.toFixed(1);
+          }
+        }
       })
-        .then((res) => {
-          acuumulateDay.value = res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
+      .catch((err) => {
+        
+      });
+  };
 
-    return {
-      acuumulateList,
-      acuumulateMonth,
-      acuumulateToday,      
-      acuumulateDay,
-      getAcuumulateList,
-      getAcuumulateMonth,
-      getAcuumulateToday,
-      getAcuumulateDay,
-      today,
-      duration,
-      month,
-      day,
-    };
-  },
-);
+  return {
+    accumulateTemp,
+    accumulateList: accumulateList,
+    accumulateMonth: accumulateMonth,
+    accumulateToday: accumulateToday,
+    accumulateDay: accumulateDay,
+    getAccumulateList: getAccumulateList,
+    getAccumulateMonth: getAccumulateMonth,
+    getAccumulateToday: getAccumulateToday,
+    getAccumulateDay: getAccumulateDay,
+    getAccumulateTemp,
+    today,
+    duration,
+    month,
+    day,
+  };
+});
