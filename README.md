@@ -238,7 +238,7 @@
         <td align="center">UI/UX<br/>Vue<br/></td>
         <td align="center">UI/UX<br/>Vue<br/>WebRTC,WebSocket</td>
         <td align="center">UI/UX<br/>Vue</td>
-        <td align="center">REST API<br/>Spring Boot/Flask<br/>WebRTC,WebSocket<br/>Infra</td>
+        <td align="center">REST API<br/>Spring Boot<br/>Flask<br/>WebRTC,WebSocket<br/>Infra</td>
         <td align="center">REST API<br/>Spring Boot<br/>Infra</td>        
     </tr>
 </table>
