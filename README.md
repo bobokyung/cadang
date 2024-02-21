@@ -142,9 +142,9 @@
 <br />
 
 ## 🌏 메인페이지 - 추천음료
-<img src="./RMimg/fruitDrink.png" alt="singnup" width="700px" height="800px">
-<img src="./RMimg/coldbrewDrink.png" alt="singnup" width="700px" height="800px">
-<img src="./RMimg/peachDrink.png" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/fruitDrink.PNG" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/coldbrewDrink.PNG" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/peachDrink.PNG" alt="singnup" width="700px" height="800px">
 
 <br />
 
