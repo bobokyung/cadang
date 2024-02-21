@@ -136,7 +136,21 @@
 
 - 카페인, 당 권장 섭취량과 현재 섭취량을 비교해줍니다.  
 - 일,주 별로 섭취량 현황을 알 수 있습니다
-- 유저가 자주마신 음료를 기반으로 비슷한 음료를 추천해줍니다  
+- 유저가 최근 음료를 기반으로 비슷한 음료를 추천해줍니다  
+<br />
+<br />
+<br />
+
+## 🌏 메인페이지 - 추천음료
+<img src="./RMimg/fruitDrink.png" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/coldbrewDrink.png" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/peachDrink.png" alt="singnup" width="700px" height="800px">
+
+<br />
+
+- 사용자의 가장 최근 등록한 음료를 기반하여 음료를 추천해줍니다.  
+- 음료의 태깅으로 음료간의 코사인 유사도를 계산하여 10개 뽑아냅니다.
+  그 이후 10개 중에서 카페인이 낮거나, 당이 낮은 음료를 정렬하여 선별합니다. 
 <br />
 <br />
 <br />
