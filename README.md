@@ -93,7 +93,7 @@
 
 # 🧮 시스템 아키텍처
 
-<img src="./RMimg/시스템 구성.PNG" alt="마이페이지" width="900px" height="700px">
+<img src="./RMimg/시스템 구성.PNG" alt="마이페이지" >
 
 
 <br />
@@ -108,7 +108,7 @@
 <br />
 
 ## ❤ 시작페이지
-<img src="./RMimg/시작.gif" alt="start" width="700px" height="800px">
+<img src="./RMimg/시작.gif" alt="start" >
  
 <br />
 
@@ -118,7 +118,7 @@
 <br />
 
 ## 🤝 회원가입페이지
-<img src="./RMimg/회원가입페이지.gif" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/회원가입페이지.gif" >
 
 <br />
 
@@ -130,7 +130,7 @@
 <br />
 
 ## 🌏 메인페이지
-<img src="./RMimg/메인페이지.gif" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/메인페이지.gif" >
 
 <br />
 
@@ -142,9 +142,9 @@
 <br />
 
 ## 🌏 메인페이지 - 추천음료
-<img src="./RMimg/fruitDrink.PNG" alt="singnup" width="700px" height="800px">
-<img src="./RMimg/coldbrewDrink.PNG" alt="singnup" width="700px" height="800px">
-<img src="./RMimg/peachDrink.PNG" alt="singnup" width="700px" height="800px">
+<img src="./RMimg/fruitDrink.PNG" >
+<img src="./RMimg/coldbrewDrink.PNG">
+<img src="./RMimg/peachDrink.PNG">
 
 <br />
 
@@ -156,9 +156,9 @@
 <br />
 
 ## ✍ 마신 음료 등록
-<img src="./RMimg/음료기입1.gif" alt="input" width="700px" height="800px">
+<img src="./RMimg/음료기입1.gif" >
 <br />
-<img src="./RMimg/음료기입2.gif" alt="input" width="700px" height="800px">
+<img src="./RMimg/음료기입2.gif" >
 
 <br />
 
@@ -170,7 +170,7 @@
 <br />
 
 ## 🗣 채팅
-<img src="./RMimg/채팅.gif" alt="cal" width="700px" height="800px">
+<img src="./RMimg/채팅.gif" >
 
 <br />
 
@@ -180,7 +180,7 @@
 <br />
 
 ## 📅 캘린더
-<img src="./RMimg/캘린더.gif" alt="cal" width="700px" height="800px">
+<img src="./RMimg/캘린더.gif" >
 
 <br />
 
@@ -193,7 +193,7 @@
 <br />
 
 ## 🔎 검색페이지
-<img src="./RMimg/검색페이지.gif" alt="search" width="700px" height="800px">
+<img src="./RMimg/검색페이지.gif">
 <br />
 
 - 순위보기를 통해 검색순위와 인기 등록 음료 순위를 확인할 수 있습니다
@@ -205,7 +205,7 @@
 <br />
 
 ## 👀 마이페이지/정보수정
-<img src="./RMimg/마이페이지.gif" alt="mypage" width="700px" height="800px">
+<img src="./RMimg/마이페이지.gif" >
 <br />
 
 - 본인의 정보(키,몸무게,성별,나이)에 알맞은 섭취 권장량을 보여줍니다  
@@ -224,15 +224,15 @@
 <table>
     <tr>
         <td height="140px" align="center"> 
-            <img src="" width="140px" /> <br><br> 👑 임지현 <br>(Front-End) </a> <br></td>
+             👑 임지현 <br>(Front-End) </a> <br></td>
         <td height="140px" align="center"> 
-            <img src="" width="140px" /> <br><br> 🙂 김준섭 <br>(Front-End) </a> <br></td>
+             🙂 김준섭 <br>(Front-End) </a> <br></td>
         <td height="140px" align="center"> 
-            <img src="" width="140px" /> <br><br> 😆 권근열 <br>(Front-End) </a> <br></td>
+             😆 권근열 <br>(Front-End) </a> <br></td>
         <td height="140px" align="center"> 
-            <img src="" width="140px" /> <br><br> 😁 김보경 <br>(Back-End) </a> <br></td>
+             😁 김보경 <br>(Back-End) </a> <br></td>
         <td height="140px" align="center"> 
-            <img src="" width="140px" /> <br><br> 🙄 김보라 <br>(Back-End) </a> <br></td>        
+             🙄 김보라 <br>(Back-End) </a> <br></td>        
     </tr>
     <tr>
         <td align="center">UI/UX<br/>Vue<br/></td>
@@ -255,14 +255,58 @@
 # 📃 설계 문서
 
 ## ERD
-<img src="./RMimg/ERD.png" alt="erd" width="800px" height="800px">
+<img src="./RMimg/ERD.png" alt="erd">
+
+<br />
+<br />
+<br />
+
+## API 명세서
+ method | URI                            | API                                                            | 담당(BE) | BE구현 | 담당 (FE)     | FE 구현 
+--------|--------------------------------|----------------------------------------------------------------|-------------|------|-------------|-------
+ GET    | /api/kakao-login?code=blahblah | 카카오 로그인                                                        | 김보라    | Yes  | Junseob Kim | Yes   
+ PUT    | /api/logout                    | 로그아웃                                                           | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/user                      | 회원 정보 조회                                                       | 김보라    | Yes  | 권근열         | Yes   
+ PUT    | /api/user                      | 회원 정보 수정                                                       | 김보라    | Yes  | 권근열         | Yes   
+ DELETE | /api/user                      | 회원 탈퇴                                                          | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/user/name                 | 회원 닉네임 조회                                                      | 김보라    | Yes  | 지현          | Yes   
+ GET    | /api/user/amount               | 회원 권장량 조회                                                      | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/user/max                  | "마이페이지 - 회원 당, 카페인 최고 섭취량 및 날짜 조회"                             | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/accumulate/today          | "메인페이지 - 당, 카페인 일일 섭취량 조회"                                     | 보경 김   | Yes  | 지현          | Yes   
+ GET    | /api/accumulate/duration       | "메인페이지 - 당, 카페인 기간별 섭취량 조회 ( 그래프 ) "                           | 보경 김   | Yes  | 지현          | Yes   
+ GET    | /api/recommend/sugar           | "메인페이지 - 사용자 기록 기반 음료 추천 ( 당 ) "                               | 보경 김   | Yes  | 지현          | Yes   
+ GET    | /api/recommend/caffeine        | 메인페이지 - 사용자 기록 기반 음료 추천 ( 카페인 )                                | 보경 김   | Yes  | 지현          | Yes   
+ POST   | /api/records/drink             | 기록- 카페 음료 기록 생성                                                | 보경 김   | Yes  | 지현          | Yes   
+ POST   | /api/records/make              | 기록 - 나만의 음료 기록 생성                                              | 보경 김   | Yes  | 지현          | Yes   
+ GET    | /api/drinks/{cafeId}/{keyword} | 기록 - 카페 선택시 음료 검색                                              | 보경 김   | Yes  | 지현          | Yes   
+ GET    | /api/drinks/cafe               | 기록 - 카페 음료 기록 시 선택가능한 카페 조회                                    | 보경 김   | Yes  | 지현          | Yes   
+ GET    | /api/drinks/{cafeId}           | 기록 - 카페 음료 기록 시 선택가능한 카페별 음료 조회                                | 보경 김   | Yes  | 지현          | Yes   
+ POST   | /api/records/drink             | 캘린더 - 카페 음료 기록 생성                                              | 보경 김   | Yes  | Junseob Kim | Yes   
+ POST   | /api/records/make              | 캘린더 - 나만의 음료 기록 생성                                             | 보경 김   | Yes  | Junseob Kim | Yes   
+ PUT    | /api/records/drink             | 캘린더 - 카페 음료 기록 수정                                              | 보경 김   | Yes  | Junseob Kim | Yes   
+ PUT    | /api/records/make              | 캘린더 - 나만의 음료 기록 수정                                             | 보경 김   | Yes  | Junseob Kim | Yes   
+ DELETE | /api/records/{recordId}        | 캘린더 - 음료 기록 삭제                                                 | 보경 김   | Yes  | Junseob Kim | Yes   
+ GET    | /api/accumulate/{ym}/month     | 캘린더 - 해당 월 전체 음료 기록 조회                                         | 보경 김   | Yes  | Junseob Kim | Yes   
+ GET    | /api/records/{date}/day        | 캘린더 - 날짜에 해당하는 음료 기록 상세 조회                                     | 보경 김   | Yes  | Junseob Kim | Yes   
+ GET    | /api/accumulate/{date}/day     | 캘린더 - 상세 기록에서 일일섭취량 총 합                                        | 보경 김   | Yes  | Junseob Kim | Yes   
+ GET    | /api/rank/keywordranking       | 검색페이지 - 검색량 높은 키워드 순위                                          | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/rank/recordranking        | 검색페이지 - 기록량 높은 음료 순위                                           | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/drinks                    | 검색페이지 - 음료 전체보기 버튼                                             | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/search/{keyword}          | 검색페이지 - 음료 검색하기                                                | 김보라    | Yes  | 권근열         | Yes   
+ GET    | /api/accumulate/today          | "검색페이지 - 전체보기 버튼을 눌렀을 때 각 음료와 유저의 카페인,당 일일섭취량 비교를 위한 일일섭취량 조회" | 보경 김   | Yes  | 권근열         | Yes   
+ socket | ws://localhost:8080/ws/chat    | 채팅 소켓 기능                                                       | 보경 김   | Yes  | Junseob Kim | Yes   
+ GET    | /api/chat/chatroom             | 채팅룸 list                                                       | 보경 김   | Yes  | Junseob Kim | Yes   
+ GET    | /api/chat/{chatId}             | 채팅 내용 조회                                                       | 보경 김   | Yes  | Junseob Kim | Yes   
+ GET    | /api/recommand/sugar           | 당 추천음료                                                         | 보경 김   | Yes  |             | Yes   
+ GET    | /api/recommand/caffeine        | 카페인 추천음료                                                       | 보경 김   | Yes  |             | Yes   
+
 
 <br />
 <br />
 <br />
 
 ## 화면설계서
-<img src="./RMimg/화면설계서.PNG" alt="화면설계" width="800px" height="800px">
+<img src="./RMimg/화면설계서.PNG" alt="화면설계">
 
 <br />
 <br />
@@ -277,12 +321,12 @@
 <br />
 
 ## Commit convention
+<img src="./RMimg/커밋.PNG" >
 
-<img src="./RMimg/커밋.PNG" alt="커밋" width="800px" height="400px">
+<br />
+<br />
+<br />
 
-<br />
-<br />
-<br />
 
 
 
